@@ -1,0 +1,30 @@
+{
+  "enviroment": {
+    "project": {
+      "name": "twittery",
+      "version": "2.0",
+      "path": "C:/Users/gafel/Documents/twee-crawler"
+    }
+  },
+  "twitter_access_gabriel": {
+    "consumer_key": "h9xVopEgjpmRqO2AB3E8ex4bB",
+    "consumer_secret": "JEKEX1YxOVpgiVmdPaRgcm5B89kfxGEtQqTjhmEtPzEPniFzId",
+    "access_token": "941421240417439744-5xsDt1xkTp6heEfSrFMNxexcvNGcOUA",
+    "access_token_secret": "t4RFluviJFNj4UzHHV6BZ5PYyeIIj1Un7GCBidvFfMKqx"
+  },
+
+  "twitter_access_italo": {
+    "consumer_key": "nAVCimcTL3xR3AvnWdRJRkLBl",
+    "consumer_secret": "k6A3eSyWn5CMbPpVjrV1h5BZkPa0QY6g9cJ1nviQBcDnGMo2M6",
+    "access_token": "1016750186297688064-FUsaE4m3FwclQZTSJmTNOMefOenrwo",
+    "access_token_secret": "T4jK8OrtXRbosveqx55ZTMNbAcow4YusDaMY1WMmR2zd7"
+  },
+
+  "twitter_access_pablo": {
+    "consumer_key": "76zMp7vz4agZIa9cd47jDHE5c",
+    "consumer_secret": "f9w5Ih6eTux5ZCx2N81KMqLAFLyLi3CgA6YItz0kkf1AqTdUPA",
+    "access_token": "159551047-VUERGP0ZA84Jo1wvdz9WRfwgAjEL0eilB1QEsGOz",
+    "access_token_secret": "1Xo7ZFTWRnwUNw4eOizQpN8jTYvFRFMcIRcWnCKArLUBe"
+  }
+}
+

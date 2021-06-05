@@ -1,0 +1,5 @@
+tweepy==4.0.0
+pymysql
+networkx
+datetime
+tqdm
