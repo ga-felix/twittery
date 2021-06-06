@@ -31,24 +31,24 @@ class Sql(Database):
 
     # Stablishes a retweet relationship between two tweets
     def insertRetweet(self, retweeter, retweeted):
-        self.query("INSERT IGNORE INTO retweet (id_retweeter, id_retweeted) VALUES (%s, %s)", (retweeter, retweeted))
+        self.query("INSERT IGNORE INTO retweet (id_retweeter, id_retweeted) VALUES ({}, {})".format(retweeter, retweeted))
 
     # Stablishes a quote relationship between two tweets
     def insertQuote(self, quoter, quoted):
-        self.query("INSERT IGNORE INTO quote (id_quoter, id_quoted) VALUES (%s, %s)", (quoter, quoted))
+        self.query("INSERT IGNORE INTO quote (id_quoter, id_quoted) VALUES ({}, {})".format(quoter, quoted))
 
     # Stablishes a reply relationship between two tweets
     def insertReply(self, replier, replied):
-        self.query("INSERT IGNORE INTO reply (id_replier, id_replied) VALUES (%s, %s)", (replier, replied))  
+        self.query("INSERT IGNORE INTO reply (id_replier, id_replied) VALUES ({}, {})".format(replier, replied))  
 
     # Insert a tweet
     def insertTweet(self, tweet):
-        self.query("INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+        self.query("INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ({}, {}, {}, {}, {}, {}, {}, {});".format
         (tweet.id, tweet.text, tweet.created_at, tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count))
 
     # Insert a twitter account
     def insertAccount(self, account):
-        self.query("INSERT IGNORE INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        self.query("INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ({}, {}, {}, {}, {}, {}, {}, {}, {});".format
         (account.id, account.username, account.description, account.followers_count, account.following_count, account.tweet_count, account.listed_count, account.verified, account.created_at))
 
     # Delete tweets meeting certain conditions
