@@ -13,6 +13,13 @@ from types import SimpleNamespace
 
 class Api():
 
+    # Select which fields will be returned. It must be concise with the
+    # database implementation. 
+
+    def __init__(self):
+        self.parameters = {"tweet.fields": "id,text,created_at,author_id,public_metrics", "expansions": "referenced_tweets.id,author_id",
+                            "user.fields": "id,username,description,public_metrics,verified,created_at"}
+
     # Set the bearer token at the header of request. The bearer token 
     # allows more calls than the standart one.
 
@@ -32,15 +39,7 @@ class Api():
     # Request to User Timeline endpoint. Check Twitter API documentation
     # for further details.
 
-    def user_timeline(self, id, npages):
-        self.parameters = {"max_results": 100,
-                            "tweet.fields": "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,non_public_metrics,organic_metrics,possibly_sensitive,promoted_metrics,public_metrics,referenced_tweets,reply_settings,source,text,withheld",
-                            "expansions": "referenced_tweets.id,author_id,entities.mentions.username,in_reply_to_user_id",
-                            "user.fields": "created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld"}
+    def user_timeline(self, id):
         url = "https://api.twitter.com/2/users/{}/tweets".format(id)
-        pages = list()
-        for page in range(npages):
-            status = self.call(url, self.header, self.parameters)
-            self.parameters["pagination_token"] = status.meta.next_token
-            pages.append(status)
-        return pages
+        status = self.call(url, self.header, self.parameters)
+        return status

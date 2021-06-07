@@ -1,8 +1,10 @@
-from db.sql import sql
-from crawler import crawler
+from database.sql import sql
+from extractor import extractor
+from settings import settings
 
 def main():
-    crawler.foo()
+    settings.init()
+    extractor.foo()
 
 if __name__ == "__main__":
     main()

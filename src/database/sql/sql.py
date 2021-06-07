@@ -1,4 +1,4 @@
-from ..db import Database
+from ..database import Database
 import traceback
 import pymysql
 import pymysql.cursors
