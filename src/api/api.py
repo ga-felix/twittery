@@ -13,6 +13,13 @@ from types import SimpleNamespace
 
 class Api():
 
+    # Setup default parameters that request should return.
+
+    def __init__(self):
+        self.tweets = "id,text,created_at,author_id,public_metrics,entities"
+        self.users = "id,username,description,public_metrics,verified,created_at"
+        self.expansions = "referenced_tweets.id,author_id,entities.mentions.username,referenced_tweets.id.author_id"
+
     # Set the bearer token at the header of request. The bearer token 
     # allows more calls than the standart one.
 
@@ -24,23 +31,44 @@ class Api():
     # response into a python object Status.
 
     def call(self, url, headers, params):
-        response = requests.request("GET", url, headers=headers, params=params)
+        response = requests.request("GET", url, headers=headers, params=params) # GET request to URL endpoint
         if response.status_code != 200:
             error.raiseError(response.status_code)
-        return json.loads(json.dumps(response.json()), object_hook=lambda d: SimpleNamespace(**d))
+        return json.loads(json.dumps(response.json()), object_hook=lambda d: SimpleNamespace(**d)) # Turns raw json into python object.
+
+    # Handle status pagination. It yields statuses until there're no more
+    # left or the limit stablished of pages was reached.
+
+    def paginator(self, npages, request, *args):
+        page = 0
+        while True:
+            if page == npages:  # Page limit was reached? If true
+                break           # then leave.
+            page += 1
+            try:
+                status = request(*args)
+            except error.ApiError as e: # TODO: if a generator raises Exception, is it possible to consume it from the point
+                raise e                 # before Exception was raised? This could possibly save not necessary API calls
+            if not hasattr(status.meta, "next_token"): # Is still possible to paginate? If not
+                break                                  # then leave.
+            args[2]["pagination_token"] = status.meta.next_token
+            yield status
 
     # Request to User Timeline endpoint. Check Twitter API documentation
     # for further details.
 
-    def user_timeline(self, id, npages):
-        self.parameters = {"max_results": 100,
-                            "tweet.fields": "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,non_public_metrics,organic_metrics,possibly_sensitive,promoted_metrics,public_metrics,referenced_tweets,reply_settings,source,text,withheld",
-                            "expansions": "referenced_tweets.id,author_id,entities.mentions.username,in_reply_to_user_id",
-                            "user.fields": "created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld"}
-        url = "https://api.twitter.com/2/users/{}/tweets".format(id)
-        pages = list()
-        for page in range(npages):
-            status = self.call(url, self.header, self.parameters)
-            self.parameters["pagination_token"] = status.meta.next_token
-            pages.append(status)
-        return pages
+    def user_timeline(self, id, npages=-1, max_results=10, start_time=None, end_time=None):
+        parameters = dict()
+        parameters['tweet.fields'] = self.tweets
+        parameters['user.fields'] = self.users
+        parameters['expansions'] = self.expansions
+        parameters['max_results'] = max_results
+        if start_time:
+            parameters['start_time'] = start_time
+        if end_time:
+            parameters['end_time'] = end_time
+        url = 'https://api.twitter.com/2/users/{}/tweets'.format(id)
+        return self.paginator(npages, self.call, url, self.header, parameters)
+
+    # TODO: Full-archive historical search. ALWAYS USE 'paginator' function!
+    # TODO: Recent search. ALWAYS USE 'paginator' function!
