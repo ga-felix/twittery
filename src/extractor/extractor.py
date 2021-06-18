@@ -11,7 +11,7 @@ def foo():
     count = 0
 
     for user in settings.user_timeline:
-        pages = a.user_timeline(user, npages=7, max_results=5)
+        pages = a.user_timeline(user, npages=2, max_results=5)
         for page in pages:
             count += 1
             #for result in page.data:

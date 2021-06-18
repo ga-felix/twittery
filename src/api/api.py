@@ -112,6 +112,7 @@ class Api():
                 yield next(paginator)
             except RateLimitError:
                 print(str(threading.get_ident()) + "Key exhausted")
+                keyring.release()
                 key = keyring.request()
                 continue
             except ForbiddenError:
@@ -122,6 +123,7 @@ class Api():
                     log.write(traceback.format_exc())
                 break
             except StopIteration:
+                keyring.return_key(key)
                 break
 
     # Request to User Timeline endpoint. Check Twitter API documentation
