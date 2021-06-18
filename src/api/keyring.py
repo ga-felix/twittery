@@ -4,6 +4,7 @@ import time
 from pathlib import Path
 from threading import RLock
 from threading import Lock
+import threading
 
 class Keyring():
 
@@ -35,39 +36,39 @@ class Keyring():
             return keyring
 
     def request(self):
-        print("Key was requested.")
         self._lock.acquire() # Enter critical section
+        print(str(threading.get_ident()) + " Key was requested.")
         self.wait() # If there's no key available, wait
         key = self.keyring.pop() # Assign requested key
         self.in_use.append(key) # Key is now in use
         self.timer.append(time.time()) # Assign time when key is requested
         self._lock.release() # Leave critical section
-        print("Key was obtained! " + str(key))
+        print(str(threading.get_ident()) + " Key was obtained! " + str(key))
         return key
 
     def wait(self):
         if len(self.keyring) == 0:
             maximum_elapsed = -1
             now = time.time()
-            print("TEMPO AGORA " + str(now))
             key_index = None
             for index, key in enumerate(self.in_use):
                 elapsed = now - self.timer[index]
-                print("PASSOU " + str(elapsed))
                 if elapsed > maximum_elapsed:
                     maximum_elapsed = elapsed
                     key_index = index
-            print("Waiting next key available in " + str(60 * 15 - maximum_elapsed))
-            time.sleep(60 * 15 - maximum_elapsed)
+            print("Waiting next key available in " + str(1 * 3 - maximum_elapsed))
+            time.sleep(1 * 3 - maximum_elapsed)
             self.keyring.append(self.in_use[key_index])
             self.in_use.pop(key_index)
             self.timer.pop(key_index)
-            print("Key released " + str(self.in_use[key_index]))
+            print("Key released")
 
     def release(self, key):
+        self._lock.acquire() # Enter critical section
         self.keyring.append(key)
         index = self.in_use.index(key)
         self.in_use.pop(index)
         self.timer.pop(index)
+        self._lock.release() # Leave critical section
         print("Key was released just now " + str(key))
             
