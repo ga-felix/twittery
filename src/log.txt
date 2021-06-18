@@ -1160,3 +1160,283 @@ Traceback (most recent call last):
   File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
     raise exc
 pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+2021-06-17: SQL Database reported an error: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)") 
+Traceback (most recent call last):
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 12, in __init__
+    self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8')
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
