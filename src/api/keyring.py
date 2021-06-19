@@ -43,6 +43,7 @@ class Keyring():
         self.in_use.append(key) # Key is now in use
         self.timer.append(time.time()) # Assign time when key is requested
         print(str(threading.get_ident()) + " Key was obtained! " + str(key))
+        self._lock.release() # Leave critical section
         return key
 
     def wait(self):
@@ -55,18 +56,15 @@ class Keyring():
                 if elapsed > maximum_elapsed:
                     maximum_elapsed = elapsed
                     key_index = index
-            print(str(threading.get_ident()) + " Waiting next key available in " + str(3 * 1 - maximum_elapsed))
-            time.sleep(3 * 1 - maximum_elapsed)
+            print(str(threading.get_ident()) + " Waiting next key available in " + str(60 * 15 - maximum_elapsed))
+            time.sleep(60 * 15 - maximum_elapsed)
             self.keyring.append(self.in_use[key_index])
             self.in_use.pop(key_index)
             self.timer.pop(key_index)
             print(str(threading.get_ident()) + " Key released")
-
-    def release(self):
-        self._lock.release() # Leave critical section
-        print(str(threading.get_ident()) + " Lock was released just now ")
             
     def return_key(self, key):
+        self._lock.acquire() # Enter critical section
         self.keyring.append(key)
         index = self.in_use.index(key)
         self.in_use.pop(index)

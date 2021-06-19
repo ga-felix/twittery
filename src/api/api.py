@@ -103,16 +103,11 @@ class Api():
             yield status
 
     def limit_handler(self, paginator, key, keyring):
-        p = 2
         while True:
             try:
-                p += 1
-                if p == 5:
-                    raise RateLimitError
                 yield next(paginator)
             except RateLimitError:
                 print(str(threading.get_ident()) + "Key exhausted")
-                keyring.release()
                 key = keyring.request()
                 continue
             except ForbiddenError:
