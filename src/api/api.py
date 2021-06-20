@@ -50,6 +50,27 @@ def raiseError(code):
         raise NotFoundError()
     raise ApiError(code=code)
 
+class Paginator():
+
+    def __init__(self, npages, url, key, parameters, call):
+        self.npages = npages
+        self.url = url
+        self.key = key
+        self.parameters = parameters
+        self.call = call
+
+    def pages(self):
+        page = 0
+        stop = False
+        while not stop:
+            page += 1
+            status = self.call(self.url, self.key, self.parameters)
+            if hasattr(status.meta, "next_token") and page < self.npages:                   
+                self.parameters["pagination_token"] = status.meta.next_token
+            else:
+                stop = True
+            yield status
+
 # Manage get requests to Twitter API. It expects App authenticaton
 # only.
 
@@ -90,22 +111,16 @@ class Api():
     # Handle status pagination. It yields statuses until there're no more
     # left or the limit stablished of pages was reached.
 
-    def paginator(self, npages, keyring, url, key, parameters):
-        page = 0
-        stop = False
-        while not stop:
-            page += 1
-            status = self.call(url, key, parameters)
-            if hasattr(status.meta, "next_token") and page < npages:                   
-                parameters["pagination_token"] = status.meta.next_token
-            else:
-                stop = True
-            yield status
-
-    def limit_handler(self, paginator, key, keyring):
+    def limit_handler(self, paginator, keyring):
+        paginator_pages = paginator.pages()
+        key = paginator.key
+        p = 0
         while True:
             try:
-                yield next(paginator)
+                p += 1
+                if p == 5:
+                    raise RateLimitError
+                yield next(paginator_pages)
             except RateLimitError:
                 print(str(threading.get_ident()) + "Key exhausted")
                 key = keyring.request()
@@ -136,7 +151,7 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/users/{}/tweets'.format(id)
         key = self.keys_user_timeline.request()
-        return self.limit_handler(self.paginator(npages, self.keys_user_timeline, url, key, parameters), key, self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call), self.keys_user_timeline)
 
     # TODO: Full-archive historical search. ALWAYS USE 'paginator' function!
     # TODO: Recent search. ALWAYS USE 'paginator' function!

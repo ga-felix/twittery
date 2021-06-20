@@ -14,7 +14,7 @@ def foo():
         pages = a.user_timeline(user, npages=2, max_results=5)
         for page in pages:
             count += 1
-            #for result in page.data:
+            for result in page.data:
                 #print(result.id)
             time.sleep(0.1)
 

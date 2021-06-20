@@ -56,8 +56,11 @@ class Keyring():
                 if elapsed > maximum_elapsed:
                     maximum_elapsed = elapsed
                     key_index = index
-            print(str(threading.get_ident()) + " Waiting next key available in " + str(60 * 15 - maximum_elapsed))
-            time.sleep(60 * 15 - maximum_elapsed)
+            print(str(threading.get_ident()) + " Waiting next key available in " + str(1 * 3 - maximum_elapsed))
+            #time.sleep(1 * 3 - maximum_elapsed)
+            key = self.in_use[key_index]
+            while key self.in_use:
+                pass
             self.keyring.append(self.in_use[key_index])
             self.in_use.pop(key_index)
             self.timer.pop(key_index)
