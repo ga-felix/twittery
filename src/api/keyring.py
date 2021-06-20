@@ -20,8 +20,9 @@ class Keyring():
     def __init__(self):
         self.keyring = self.read()
         self.in_use = list()
-        self.timer = list()
+        self.timer = dict()
         self._lock = RLock()
+        self._rlock = RLock()
 
     def read(self):
         keyring = list()
@@ -41,36 +42,28 @@ class Keyring():
         self.wait() # If there's no key available, wait
         key = self.keyring.pop() # Assign requested key
         self.in_use.append(key) # Key is now in use
-        self.timer.append(time.time()) # Assign time when key is requested
+        now = time.time()
+        if not key in self.timer:
+            self.timer[key] = (now + 60 * 15) # Assign time when key is requested
+        else:
+            if now > self.timer[key]:
+                self.timer[key] = now + 60 * 15
         print(str(threading.get_ident()) + " Key was obtained! " + str(key))
         self._lock.release() # Leave critical section
         return key
 
     def wait(self):
-        if len(self.keyring) == 0:
-            maximum_elapsed = -1
-            now = time.time()
-            key_index = None
-            for index, key in enumerate(self.in_use):
-                elapsed = now - self.timer[index]
-                if elapsed > maximum_elapsed:
-                    maximum_elapsed = elapsed
-                    key_index = index
-            print(str(threading.get_ident()) + " Waiting next key available in " + str(1 * 3 - maximum_elapsed))
-            #time.sleep(1 * 3 - maximum_elapsed)
-            key = self.in_use[key_index]
-            while key self.in_use:
-                pass
-            self.keyring.append(self.in_use[key_index])
-            self.in_use.pop(key_index)
-            self.timer.pop(key_index)
-            print(str(threading.get_ident()) + " Key released")
+        while len(self.keyring) == 0:
+            time.sleep(0.1)
+            pass
             
-    def return_key(self, key):
-        self._lock.acquire() # Enter critical section
+    def release(self, key):
+        self._rlock.acquire() # Enter critical section
         self.keyring.append(key)
         index = self.in_use.index(key)
         self.in_use.pop(index)
-        self.timer.pop(index)
         print(str(threading.get_ident()) + " Iteration over. Returned key ")
-        self._lock.release() # Leave critical section
+        self._rlock.release() # Leave critical section
+
+    def timer_key(self, key):
+        return self.timer[key]

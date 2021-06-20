@@ -6,6 +6,7 @@ import traceback
 from . import keyring
 from datetime import date
 import threading
+import time
 
 #Keys from project twitter-crawler and app twitter-crawler
 #NMr3bgW5x0GYZoPXCXg2Bp96IA1u3OaRjp7F7QpiiRTxOm6X6T API Key
@@ -113,17 +114,15 @@ class Api():
 
     def limit_handler(self, paginator, keyring):
         paginator_pages = paginator.pages()
-        key = paginator.key
-        p = 0
         while True:
             try:
-                p += 1
-                if p == 5:
-                    raise RateLimitError
                 yield next(paginator_pages)
             except RateLimitError:
-                print(str(threading.get_ident()) + "Key exhausted")
-                key = keyring.request()
+                now = time.time()
+                print(str(threading.get_ident()) + " Key exhausted sleeping " + str(keyring.timer_key(paginator.key) - now))
+                time.sleep(keyring.timer_key(paginator.key) - now)
+                keyring.release(paginator.key)
+                paginator.key = keyring.request()
                 continue
             except ForbiddenError:
                 continue
@@ -133,7 +132,7 @@ class Api():
                     log.write(traceback.format_exc())
                 break
             except StopIteration:
-                keyring.return_key(key)
+                keyring.release(paginator.key)
                 break
 
     # Request to User Timeline endpoint. Check Twitter API documentation
