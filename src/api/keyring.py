@@ -38,7 +38,7 @@ class Keyring():
 
     def request(self):
         self._lock.acquire() # Enter critical section
-        print(str(threading.get_ident()) + " Key was requested.")
+        #print(str(threading.get_ident()) + " Key was requested.")
         self.wait() # If there's no key available, wait
         key = self.keyring.pop() # Assign requested key
         self.in_use.append(key) # Key is now in use
@@ -48,7 +48,7 @@ class Keyring():
         else:
             if now > self.timer[key]:
                 self.timer[key] = now + 60 * 15
-        print(str(threading.get_ident()) + " Key was obtained! " + str(key))
+        #print(str(threading.get_ident()) + " Key was obtained! " + str(key))
         self._lock.release() # Leave critical section
         return key
 
@@ -62,7 +62,7 @@ class Keyring():
         self.keyring.append(key)
         index = self.in_use.index(key)
         self.in_use.pop(index)
-        print(str(threading.get_ident()) + " Iteration over. Returned key ")
+        #print(str(threading.get_ident()) + " Iteration over. Returned key ")
         self._rlock.release() # Leave critical section
 
     def timer_key(self, key):

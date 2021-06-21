@@ -14,6 +14,7 @@ import time
 #AAAAAAAAAAAAAAAAAAAAAEuQQQEAAAAA4%2FAoRExzxCIxCwgIepWeYC5l6%2BE%3Dz1FPz9VF1U1P9akF4bxSEryEzoiy6EFrgAUNGLsCDVMoY4TM5k Bearer Token
 
 # General API Exception. Any API exception can be caught from it.
+
 class ApiError(Exception):
     
     def __init__(self, message="Twitter API returned error code {}", code=000):
@@ -24,24 +25,28 @@ class ApiError(Exception):
         super().__init__(self.message)
 
 # Rate Limit API exception code 429
+
 class RateLimitError(ApiError):
 
     def __init__(self, message="Rate limit have been exhausted for the resource."):
         super().__init__(message=message)
 
 # Forbidden API exception code 403
+
 class ForbiddenError(ApiError):
 
     def __init__(self, message="Request was actively refused by API."):
         super().__init__(message=message)
 
 # Not Found API exception code 404
+
 class NotFoundError(ApiError):
 
     def __init__(self, message="Endpoint was not found."):
         super().__init__(message=message)
 
 # Exception handler
+
 def raiseError(code):
     if code == 429:
         raise RateLimitError()
@@ -50,6 +55,9 @@ def raiseError(code):
     if code == 404:
         raise NotFoundError()
     raise ApiError(code=code)
+
+""" Paginate a request until the number of pages is reached
+or there are no more pages to be requested. """
 
 class Paginator():
 
@@ -62,15 +70,15 @@ class Paginator():
 
     def pages(self):
         page = 0
-        stop = False
-        while not stop:
-            page += 1
+        while True:
             status = self.call(self.url, self.key, self.parameters)
-            if hasattr(status.meta, "next_token") and page < self.npages:                   
+            yield status
+            page += 1
+            if hasattr(status.meta, "next_token") and page != self.npages:                   
                 self.parameters["pagination_token"] = status.meta.next_token
             else:
-                stop = True
-            yield status
+                break
+            
 
 # Manage get requests to Twitter API. It expects App authenticaton
 # only.
@@ -109,8 +117,8 @@ class Api():
             raiseError(response.status_code)
         return json.loads(json.dumps(response.json()), object_hook=lambda d: SimpleNamespace(**d)) # Turns raw json into python object.
 
-    # Handle status pagination. It yields statuses until there're no more
-    # left or the limit stablished of pages was reached.
+    # Limit handling of status pagination. It uses 'keyring.py' as an Object Pool to
+    # perform calls up to the limit handling all exceptions and key reseting stuff.
 
     def limit_handler(self, paginator, keyring):
         paginator_pages = paginator.pages()
@@ -152,6 +160,6 @@ class Api():
         key = self.keys_user_timeline.request()
         return self.limit_handler(Paginator(npages, url, key, parameters, self.call), self.keys_user_timeline)
 
-    # TODO: Full-archive historical search. ALWAYS USE 'paginator' function!
-    # TODO: Recent search. ALWAYS USE 'paginator' function!
+    # TODO: Full-archive historical search. ALWAYS USE 'Paginator' class!
+    # TODO: Recent search. ALWAYS USE 'Paginator' class!
 

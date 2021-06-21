@@ -53,11 +53,14 @@ CREATE TABLE IF NOT EXISTS `follow` (
   FOREIGN KEY (`id_followed`) REFERENCES `account` (`id`));
 
 CREATE TABLE IF NOT EXISTS `mentions` (
-  `id_mentioner` BIGINT NOT NULL,
-  `id_mentioned` BIGINT NOT NULL,
-  PRIMARY KEY (`id_mentioner`, `id_mentioned`),
-  FOREIGN KEY (`id_mentioner`) REFERENCES `account` (`id`),
-  FOREIGN KEY (`id_mentioned`) REFERENCES `account` (`id`));
+  `mentioner` VARCHAR(15) NOT NULL,
+  `mentioned` VARCHAR(15) NOT NULL,
+  `created_at` DATE NULL,
+  `tweet_id` BIGINT NULL,
+  PRIMARY KEY (`mentioner`, `mentioned`));
+
+CREATE UNIQUE INDEX `idx_tweet_id`  ON `twitter`.`tweet` (id) COMMENT '' ALGORITHM DEFAULT LOCK DEFAULT;
+CREATE UNIQUE INDEX `idx_account_id`  ON `twitter`.`account` (id) COMMENT '' ALGORITHM DEFAULT LOCK DEFAULT;
 
 ALTER DATABASE twitter CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 ALTER TABLE tweet CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

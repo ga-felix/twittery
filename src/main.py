@@ -5,7 +5,7 @@ import threading
 
 def main():
     settings.init()
-    thread1 = threading.Thread(target = extractor.foo, args = ())
+    thread1 = threading.Thread(target = extractor.main, args = ())
     #thread2 = threading.Thread(target = extractor.foo, args = ())
     #thread3 = threading.Thread(target = extractor.foo, args = ())
     #thread4 = threading.Thread(target = extractor.foo, args = ())

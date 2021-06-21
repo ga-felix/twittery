@@ -4,6 +4,7 @@ import pymysql
 import pymysql.cursors
 from datetime import datetime
 from datetime import date
+import time
 
 class Sql(Database):
 
@@ -12,7 +13,8 @@ class Sql(Database):
         try:
             self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8mb4')
             self.cursor = self.db.cursor()
-            print("SQL Database: Connection stablished! Welcome " + user + ".")
+            self.clock = time.time()
+            #print("SQL Database: Connection stablished! Welcome " + user + ".")
         except Exception as e:
             with open('log.txt', 'a+') as log:
                 log.write(str(date.today()) + ": SQL Database reported an error: " + str(e) + " \n")
@@ -28,7 +30,10 @@ class Sql(Database):
                 log.write(str(date.today()) + ": SQL Database reported an error: " + str(e) + " \n" + " query: " + query)
                 log.write(traceback.format_exc())
         else:
-            self.db.commit()
+            now = time.time()
+            if now - self.clock > 3:
+                self.db.commit()
+                self.clock = now
 
     # Stablishes a retweet relationship between two tweets
     def insertRetweet(self, retweeter, retweeted):
@@ -45,12 +50,12 @@ class Sql(Database):
     # Insert a tweet
     def insertTweet(self, tweet):
         self.query("INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\");".format
-        (tweet.id, tweet.text, tweet.created_at.split("T")[0], tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count))
+        (tweet.id, tweet.text.replace("\"", "'"), tweet.created_at.split("T")[0], tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count))
 
     # Insert a twitter account
     def insertAccount(self, account):
         self.query("INSERT IGNORE INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\")".format
-        (account.id, account.username, account.description, account.followers_count, account.following_count, account.tweet_count, account.listed_count, account.verified, account.created_at))
+        (account.id, account.username, account.description.replace("\"", "'"), account.public_metrics.followers_count, account.public_metrics.following_count, account.public_metrics.tweet_count, account.public_metrics.listed_count, account.verified, account.created_at))
 
     # Delete tweets meeting certain conditions
     def deleteTweet(self, condition):
