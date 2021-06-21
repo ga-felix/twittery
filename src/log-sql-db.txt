@@ -1317,3 +1317,150 @@ pymysql.err.IntegrityError: (1062, "Duplicate entry '1406350217927086088' for ke
   File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18024", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18024", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18024", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18025", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18025", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18025", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18025", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')

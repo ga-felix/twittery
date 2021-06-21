@@ -52,6 +52,13 @@ CREATE TABLE IF NOT EXISTS `follow` (
   FOREIGN KEY (`id_follower`) REFERENCES `account` (`id`),
   FOREIGN KEY (`id_followed`) REFERENCES `account` (`id`));
 
+CREATE TABLE IF NOT EXISTS `mentions` (
+  `id_mentioner` BIGINT NOT NULL,
+  `id_mentioned` BIGINT NOT NULL,
+  PRIMARY KEY (`id_mentioner`, `id_mentioned`),
+  FOREIGN KEY (`id_mentioner`) REFERENCES `account` (`id`),
+  FOREIGN KEY (`id_mentioned`) REFERENCES `account` (`id`));
+
 ALTER DATABASE twitter CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 ALTER TABLE tweet CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ALTER TABLE tweet CHANGE text text VARCHAR(560) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
