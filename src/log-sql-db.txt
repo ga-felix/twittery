@@ -1,0 +1,1319 @@
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406399579059277824", "1406399571304009731");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406399571304009731", "1406399563632713728");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406399563632713728", "1406399547266437124");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406016841521242119", "1405897163566112773");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405931831585873926", "1405929369013469186");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`quote`, CONSTRAINT `quote_ibfk_2` FOREIGN KEY (`id_quoted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO quote (id_quoter, id_quoted) VALUES ("1405867673515405318", "1405191950387617796");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`quote`, CONSTRAINT `quote_ibfk_2` FOREIGN KEY (`id_quoted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405639579030495245", "1405631838555717639");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405625191766663176", "1405567716279439360");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18007", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405487149873602566", "1405191950387617796");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405302165711867905", "1405298882184110155");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1405268281917788163", "1405265255752634370");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404902281045291008", "1404830599790092291");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404899940162162689", "1404854724239794179");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404895407960887302", "1404844677115920387");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404597681641693185", "1404593755219542017");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404560093904048129", "1404535668852789263");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404518182438715399", "1404486218612625411");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404456046698143746", "1404097902402838530");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404429676303507463", "1404226307790147590");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404412396232495107", "1404411541206753281");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404410278251487232", "1404408865370869763");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404406069967872004", "1404245016206360579");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404255311951708163", "1404227594321551361");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO retweet (id_retweeter, id_retweeted) VALUES ("1404254678301528066", "1404254149319987204");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`retweet`, CONSTRAINT `retweet_ibfk_2` FOREIGN KEY (`id_retweeted`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404224186772504577", "1404224181122875403");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1404224181122875403", "1404224175284314118");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406713069988888584", "1406708477658079237");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406663639948464132", "1406663534197493764");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406663534197493764", "1406663371555061764");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406663371555061764", "1406663196061089799");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406663196061089799", "1406662954062385158");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406662954062385158", "1406662639653208069");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406662639653208069", "1406662395892752390");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406662395892752390", "1406662167533961228");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406662167533961228", "1406661690662469633");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406642520700903424", "@sagazluiz @PRFBrasil @JusticaGovBR @andersongtorres Zeramos os impostos federais de gás de cozinha! E ultrapassamos as 110 milhões de doses de vacina distribuídas a estados e municípios de todo país e continuaremos. Creio que não precisamos dizer de quem tem que cobrar, pois certamente já sabe. Um forte abraço e seja feliz sempre!", "2021-06-20", "128372940", "993", "285", "91", "10");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`id_replier`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406642520700903424", "1406635409929650179");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`id_replier`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406623541567627264", "- Mais prejuízos ao crime organizado: mais cerca de R$ 10 MILHÕES.
+
+- @PRFBrasil apreendeu mais 85 kg de pasta base de cocaína, na BR 419, em Anastácio/MS.
+
+- Um dos motivos da indignação de muitas redações, ativistas e de outros?
+
+@JusticaGovBR @andersongtorres https://t.co/3JUljP6Ybx", "2021-06-20", "128372940", "11632", "2546", "785", "111");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406581368264482823", "1406581331933503490");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406581331933503490", "1406581037942124544");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406581037942124544", "- Quando os recursos são aplicados: @minsaude lançou o Programa Renasce, para reforçar o atendimento a crianças com doenças cardiovasculares congênitas. A previsão é de que R$ 14 milhões sejam investidos e custeados para ações estruturantes da rede de atendimento especializado. https://t.co/5MnSIJ6Cpq", "2021-06-20", "128372940", "15078", "3352", "763", "100");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1406021283171733514", "1406020784691286016");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406020784691286016", "- Além de concluir entrega de mais de 50.000 títulos de propriedade hoje no Pará, aconteceu evento de conclusão das obras de 102km de pavimentação do trecho da BR-230/PA (Transamazônica), entre Itupiranga e Novo Repartimento, que estava parado desde 2013. @MInfraestrutura https://t.co/JgwCMuhfkA", "2021-06-18", "128372940", "17023", "3911", "879", "180");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405853711692410881", "1405853514975358983");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405655701121347586", "1405655607986823168");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405655607986823168", "1405655552341024769");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405655552341024769", "1405655514504208386");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405655514504208386", "1405655450805321733");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405655450805321733", "1405647002248040455");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405457012184518657", "1405456905724649475");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405456905724649475", "- A segunda entrega da semana, com mais Mais 936 mil doses da vacina Covid-19 da Pfizer chegou ao Brasil. 
+
+- O @minsaude espera receber nesta semana um total de 2,4 milhões de doses da farmacêutica, que serão enviadas para todos os estados do país e DF. @govbr https://t.co/YNrJPReffp", "2021-06-17", "128372940", "23352", "4092", "1221", "153");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405178544444121088", "- Mobilização para o início dos trabalhos de pavimentação da BR-319/AM, os primeiros 52 km. Obra com governança ambiental que vai se tornar referência de infraestrutura com sustentabilidade.
+
+@MInfraestrutura (Capitão @tarcisiogdf )
+@DNIToficial @Marceloscf2 https://t.co/i3uQwKi4xn", "2021-06-16", "128372940", "17557", "3559", "1041", "845");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))') 
+ query: INSERT INTO reply (id_replier, id_replied) VALUES ("1405107747537014787", "1405107543056261122");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`twitter`.`reply`, CONSTRAINT `reply_ibfk_2` FOREIGN KEY (`id_replied`) REFERENCES `tweet` (`id`))')
+2021-06-21: SQL Database reported an error: (1406, "Data too long for column 'text' at row 1") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405107543056261122", "Na noite de ontem (15), mais 530 mil doses de vacinas covid da Pfizer chegaram ao Brasil.
+
+Previsão: + de 2,4 milhões de doses da farmacêutica cheguem ao País nesta semana.
+
+Em nova rodada semanal, os imunizantes começam a ser distribuídos a todos os estados e DF. @minsaude https://t.co/PzGvUuZhZE", "2021-06-16", "128372940", "19605", "3586", "1165", "136");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1406, "Data too long for column 'text' at row 1")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406708899303002113' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406708899303002113", "Vacina no braço, comida no prato. São Paulo em defesa da vida ontem no #19J. #equipeLula 
+
+Vídeo: Ricardo Stuckert https://t.co/yp5AsT4uaZ", "2021-06-20", "2670726740", "19926", "2242", "624", "127");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406708899303002113' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406399579059277824' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406399579059277824", "4 - E o novíssimo Homem Onça, do @ChicoDiaz3, que assisti há poucos dias. Longa vida ao cinema nacional! https://t.co/GjnXERHrtA", "2021-06-19", "2670726740", "3295", "302", "61", "8");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406399579059277824' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406399571304009731' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406399571304009731", "3 - Democracia em Vertigem, da @petracostal, que representou nosso país no Oscar. https://t.co/7X0C1b4Q1K", "2021-06-19", "2670726740", "4283", "405", "83", "31");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406399571304009731' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406399563632713728' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406399563632713728", "2 - Bacurau, dos grandes @kmendoncafilho e @jdornelles (se for, vá na paz) https://t.co/HjfFv59Vj8", "2021-06-19", "2670726740", "3146", "263", "23", "21");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406399563632713728' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406399547266437124' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406399547266437124", "1 - 19 de junho também é Dia do Cinema Brasileiro. Pra celebrar a resistência desse setor cultural tão desprezado pelo atual governo, recomendo três filmes recentes que dizem muito sobre o Brasil de hoje.", "2021-06-19", "2670726740", "9240", "952", "291", "74");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406399547266437124' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1062, "Duplicate entry '1406350217927086088' for key 'tweet.PRIMARY'") 
+ query: INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1406350217927086088", "500 mil mortos por uma doença que já tem vacina, em um país que já foi referência mundial em vacinação. Isso tem nome e é genocídio. Minha solidariedade ao povo brasileiro.", "2021-06-19", "2670726740", "67592", "10969", "2813", "523");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '1406350217927086088' for key 'tweet.PRIMARY'")
+2021-06-21: SQL Database reported an error: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1') 
+ query: INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES ("1405518393986408452", "E não adianta falar que "ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz tempo. Pra trabalhar, pra pegar ônibus. E sem estar todo mundo vacinado, porque o Bolsonaro recusou as ofertas pra comprar enquanto era tempo.", "2021-06-17", "2670726740", "18007", "2384", "383", "217");Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 24, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'ah, mas o povo agora tá aglomerando". O povo está aglomerado todo dia e faz te\' at line 1')

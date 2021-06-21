@@ -1,9 +1,9 @@
-CREATE SCHEMA IF NOT EXISTS `twitter` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `twitter` DEFAULT CHARACTER SET utf8mb4;
 USE `twitter` ;
 
 CREATE TABLE IF NOT EXISTS `tweet` (
   `id` BIGINT NOT NULL,
-  `text` VARCHAR(280) NULL,
+  `text` VARCHAR(560) NULL,
   `created_at` DATE NULL,
   `author_id` BIGINT NULL,
   `like_count` INT NULL,
@@ -51,3 +51,8 @@ CREATE TABLE IF NOT EXISTS `follow` (
   PRIMARY KEY (`id_follower`, `id_followed`),
   FOREIGN KEY (`id_follower`) REFERENCES `account` (`id`),
   FOREIGN KEY (`id_followed`) REFERENCES `account` (`id`));
+
+ALTER DATABASE twitter CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+ALTER TABLE tweet CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE tweet CHANGE text text VARCHAR(560) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE account CHANGE description description VARCHAR(160) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
