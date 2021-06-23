@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ..database import Database
 import traceback
 import pymysql
@@ -49,13 +51,15 @@ class Sql(Database):
 
     # Insert a tweet
     def insertTweet(self, tweet):
-        self.query("INSERT IGNORE INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\");".format
-        (tweet.id, tweet.text.replace("\"", "'"), tweet.created_at.split("T")[0], tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count))
+        self.query("INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\") ON DUPLICATE KEY UPDATE id=\"{}\", text=\"{}\", created_at=\"{}\", author_id=\"{}\", like_count=\"{}\", retweet_count=\"{}\", reply_count=\"{}\", quote_count=\"{}\";".format
+        (tweet.id, tweet.text.replace("\"", "'"), tweet.created_at.split("T")[0], tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count,
+        tweet.id, tweet.text.replace("\"", "'"), tweet.created_at.split("T")[0], tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count))
 
     # Insert a twitter account
     def insertAccount(self, account):
-        self.query("INSERT IGNORE INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\")".format
-        (account.id, account.username, account.description.replace("\"", "'"), account.public_metrics.followers_count, account.public_metrics.following_count, account.public_metrics.tweet_count, account.public_metrics.listed_count, account.verified, account.created_at))
+        self.query("INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\") ON DUPLICATE KEY UPDATE id=\"{}\", username=\"{}\", description=\"{}\", followers_count=\"{}\", following_count=\"{}\", tweet_count=\"{}\", listed_count=\"{}\", verified=\"{}\", created_at=\"{}\";".format
+        (account.id, account.username, account.description.replace("\"", "'"), account.public_metrics.followers_count, account.public_metrics.following_count, account.public_metrics.tweet_count, account.public_metrics.listed_count, int(account.verified), account.created_at.split("T")[0],
+        account.id, account.username, account.description.replace("\"", "'"), account.public_metrics.followers_count, account.public_metrics.following_count, account.public_metrics.tweet_count, account.public_metrics.listed_count, int(account.verified), account.created_at.split("T")[0]))
 
     # Delete tweets meeting certain conditions
     def deleteTweet(self, condition):

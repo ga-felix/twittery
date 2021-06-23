@@ -1,0 +1,168 @@
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("2670726740", "LulaOficial", "Filho de dona Lindu. Nascido em Pernambuco, criado no Sindicato dos Metalúrgicos do ABC. Presidente da República do Brasil de 2003 a 2010.", "2621546", "2598", "22626", "2929", "True", "2014-07-22T21:36:50.000Z") ON DUPLICATE KEY UPDATE id="2670726740", username="LulaOficial", description="Filho de dona Lindu. Nascido em Pernambuco, criado no Sindicato dos Metalúrgicos do ABC. Presidente da República do Brasil de 2003 a 2010.", followers_count="2621546", following_count="2598", tweet_count="22626", listed_count="2929", verified="True", created_at="2014-07-22T21:36:50.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("134167677", "czmartins", "Advogado. Especialista em lawfare, litígios transnacionais e 'bet-the-company'. Co-autor da obra 'Lawfare: uma introdução'. Cofundador do Lawfare Institute.", "109417", "1749", "864", "201", "True", "2010-04-17T16:45:45.000Z") ON DUPLICATE KEY UPDATE id="134167677", username="czmartins", description="Advogado. Especialista em lawfare, litígios transnacionais e 'bet-the-company'. Co-autor da obra 'Lawfare: uma introdução'. Cofundador do Lawfare Institute.", followers_count="109417", following_count="1749", tweet_count="864", listed_count="201", verified="True", created_at="2010-04-17T16:45:45.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("848495834887061505", "ApibOficial", "Articulação dos Povos Indígenas do Brasil Apoie, compartilhe e fortaleça o plano Emergência Indígena https://t.co/O9f0zN9cWj", "30806", "220", "5428", "271", "True", "2017-04-02T11:22:26.000Z") ON DUPLICATE KEY UPDATE id="848495834887061505", username="ApibOficial", description="Articulação dos Povos Indígenas do Brasil Apoie, compartilhe e fortaleça o plano Emergência Indígena https://t.co/O9f0zN9cWj", followers_count="30806", following_count="220", tweet_count="5428", listed_count="271", verified="True", created_at="2017-04-02T11:22:26.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("342994346", "inst_lula", "O Instituto Lula foi criado para ampliar a cooperação entre Brasil, África e América Latina e dar continuidade ao trabalho político de Lula.", "254582", "247", "12820", "600", "True", "2011-07-26T22:17:14.000Z") ON DUPLICATE KEY UPDATE id="342994346", username="inst_lula", description="O Instituto Lula foi criado para ampliar a cooperação entre Brasil, África e América Latina e dar continuidade ao trabalho político de Lula.", followers_count="254582", following_count="247", tweet_count="12820", listed_count="600", verified="True", created_at="2011-07-26T22:17:14.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("69373037", "esuplicy", "Vereador da cidade de São Paulo. Fui senador, deputado estadual e federal e secretário de Direitos Humanos e Cidadania.", "578610", "3669", "12302", "2061", "True", "2009-08-27T19:00:10.000Z") ON DUPLICATE KEY UPDATE id="69373037", username="esuplicy", description="Vereador da cidade de São Paulo. Fui senador, deputado estadual e federal e secretário de Direitos Humanos e Cidadania.", followers_count="578610", following_count="3669", tweet_count="12302", listed_count="2061", verified="True", created_at="2009-08-27T19:00:10.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("144372753", "SenadorRogerio", "Sergipano, Senador da República, Médico Sanitarista, Professor Universitário, Pai de 3 lindas filhas.", "46585", "895", "15011", "358", "True", "2010-05-16T03:27:15.000Z") ON DUPLICATE KEY UPDATE id="144372753", username="SenadorRogerio", description="Sergipano, Senador da República, Médico Sanitarista, Professor Universitário, Pai de 3 lindas filhas.", followers_count="46585", following_count="895", tweet_count="15011", listed_count="358", verified="True", created_at="2010-05-16T03:27:15.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("224628959", "JamilChade", "Grandson of an immigrant. Father of immigrants. 5 books, 4 World Cups, 2 Popes, 70 countries and 1 football team. Jabuti Award Finalist and flutist.", "111991", "2609", "13315", "796", "True", "2010-12-09T13:30:23.000Z") ON DUPLICATE KEY UPDATE id="224628959", username="JamilChade", description="Grandson of an immigrant. Father of immigrants. 5 books, 4 World Cups, 2 Popes, 70 countries and 1 football team. Jabuti Award Finalist and flutist.", followers_count="111991", following_count="2609", tweet_count="13315", listed_count="796", verified="True", created_at="2010-12-09T13:30:23.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'True' for column 'verified' at row 1")
+2021-06-23: SQL Database reported an error: (1366, "Incorrect integer value: 'False' for column 'verified' at row 1") 
+ query: INSERT INTO account (id, username, description, followers_count, following_count, tweet_count, listed_count, verified, created_at) VALUES ("3723691095", "ChicoDiaz3", "", "1436", "634", "7582", "0", "False", "2015-09-21T02:26:50.000Z") ON DUPLICATE KEY UPDATE id="3723691095", username="ChicoDiaz3", description="", followers_count="1436", following_count="634", tweet_count="7582", listed_count="0", verified="False", created_at="2015-09-21T02:26:50.000Z";Traceback (most recent call last):
+  File "C:\Users\gafel\Documents\GitHub\twittery\src\database\sql\sql.py", line 28, in query
+    self.cursor.execute(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\gafel\AppData\Local\Programs\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: 'False' for column 'verified' at row 1")
