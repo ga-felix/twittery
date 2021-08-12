@@ -16,8 +16,7 @@ class Retweets(Graph):
         retweets = self.db.getRetweets()
         for retweet in retweets:
             retweeted_account = retweet["text"].split(" ")[1].replace("@", "").replace(":", "")
-            account = self.db.getAccount(retweet["author_id"])
-            if account: retweeter_account = account["username"]
+            retweeter_account = self.db.getAccount(retweet["author_id"])["username"]
             if (retweeter_account, retweeted_account) in self.graph.edges():
                 edge_data = self.graph.get_edge_data(retweeter_account, retweeted_account)
                 self.graph.add_edge(retweeter_account, retweeted_account, weight=edge_data['weight'] + 1)
