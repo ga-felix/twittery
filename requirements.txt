@@ -3,3 +3,5 @@ networkx
 datetime
 tqdm
 cryptography
+PySimpleGui
+pandas

@@ -9,7 +9,7 @@ from tqdm import tqdm
 """ Singleton references to api and database """
 
 a = api.Api()
-db = sql.Sql("twitter", "root", "zxc12989")
+db = None
 
 """ Insert users from twitter page """
 
@@ -18,12 +18,12 @@ def insert_users(page):
         for user in page.includes.users:
             db.insertAccount(user)
 
-
 """ Insert tweets from twitter page """
 
 def insert_tweets(page):
     if hasattr(page, "data"):
         for tweet in page.data:
+            print(tweet.id)
             db.insertTweet(tweet)
             if hasattr(tweet, "referenced_tweets"):
                 for ref_tweet in tweet.referenced_tweets:
@@ -52,29 +52,18 @@ def extract_page(page):
 """ Download user's timeline tweets """
 
 def download_user_timeline(npages = -1, max_results = 50):
-    count = 0
-    #pbar = tqdm(settings.user_timeline, leave=False)
+    global db
+    db = sql.Sql("twitter", "root", "zxc12989")
     for user in settings.user_timeline:
-        #pbar.set_description("Downloading user timeline: %s" % user)
         pages = a.user_timeline(user, npages = npages, max_results = max_results)
         for page in pages:
             extract_page(page)
-            count += 1
-            print("[EXTRACTOR] inserting page of", str(user))
-        print("[EXTRACTOR]", str(count), "tweets were inserted from", str(user), ".")
-        count = 0
-    print("[EXTRACTOR] over.")
+    db.close()
 
-def download_recent_tweets(query, max_results = 10):
+def download_recent_tweets(query, max_results = 50):
+    global db
+    db = sql.Sql("twitter", "root", "zxc12989")
     pages = a.search_tweets(query, max_results = max_results)
     for page in pages:
-        print(str(page.data))
         extract_page(page)
-
-""" Test function """
-
-def main():
-    download_recent_tweets("Desfile")
-
-if __name__ == "__main__":
-    main()
+    db.close()

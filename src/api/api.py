@@ -102,6 +102,8 @@ class Api():
         self.users = "id,username,description,public_metrics,verified,created_at"
         self.expansions = "referenced_tweets.id,author_id,entities.mentions.username,referenced_tweets.id.author_id"
         self.keys_user_timeline = keyring.Keyring()
+        self.keys_search_tweets = keyring.Keyring()
+        self.keys_full_search = keyring.Keyring()
 
     # Set the bearer token at the header of request. The bearer token 
     # allows more calls than the standart one.
@@ -165,6 +167,7 @@ class Api():
     
     def search_tweets(self, query, start_time=None, end_time=None, max_results=10):
         parameters = dict()
+        parameters['query'] = query
         parameters['tweet.fields'] = self.tweets
         parameters['user.fields'] = self.users
         parameters['expansions'] = self.expansions
@@ -173,14 +176,15 @@ class Api():
             parameters['start_time'] = start_time
         if end_time:
             parameters['end_time'] = end_time
-        url = 'https://api.twitter.com/2/tweets/search/recent?query={}'.format(query)
-        key = self.keys_user_timeline.request()
-        return self.limit_handler(Paginator(max_results, url, key, parameters, self.call), self.keys_user_timeline)
+        url = 'https://api.twitter.com/2/tweets/search/recent'
+        key = self.keys_search_tweets.request()
+        return self.limit_handler(Paginator(1, url, key, parameters, self.call), self.keys_user_timeline)
 
     # Request to full-archive search endpoint on Twitter API
     
     def full_search(self, query, start_time=None, end_time=None, max_results=10):
         parameters = dict()
+        parameters['query'] = query
         parameters['tweet.fields'] = self.tweets
         parameters['user.fields'] = self.users
         parameters['expansions'] = self.expansions
@@ -189,7 +193,7 @@ class Api():
             parameters['start_time'] = start_time
         if end_time:
             parameters['end_time'] = end_time
-        url = 'https://api.twitter.com/2/tweets/search/all?query={}'.format(query)
-        key = self.keys_user_timeline.request()
-        return self.limit_handler(Paginator(max_results, url, key, parameters, self.call), self.keys_user_timeline)
+        url = 'https://api.twitter.com/2/tweets/search/all'
+        key = self.keys_full_search.request()
+        return self.limit_handler(Paginator(1, url, key, parameters, self.call), self.keys_user_timeline)
 

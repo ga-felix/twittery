@@ -13,7 +13,7 @@ class Sql(Database):
     # Gets database driver and connect to it
     def __init__(self, db, user, password, host='localhost', port=3306):
         try:
-            self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8mb4')
+            self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
             self.cursor = self.db.cursor()
             self.clock = time.time()
             #print("SQL Database: Connection stablished! Welcome " + user + ".")
@@ -36,6 +36,11 @@ class Sql(Database):
             if now - self.clock > 3:
                 self.db.commit()
                 self.clock = now
+
+    # Close connection
+    def close(self):
+        self.db.commit()
+        self.db.close()
 
     # Stablishes a retweet relationship between two tweets
     def insertRetweet(self, retweeter, retweeted):
@@ -73,3 +78,23 @@ class Sql(Database):
     # Delete twitter accounts meeting certain conditions
     def deleteAccount(self, condition):
         self.query("DELETE FROM account WHERE " + condition)
+
+    #Request account
+    def getAccount(self, id):
+        self.query("SELECT * FROM account WHERE id = \"{}\"".format(id))
+        return self.cursor.fetchone()
+
+    # Request retweets
+    def getRetweets(self):
+        self.query("SELECT * FROM tweet, retweet WHERE id = id_retweeter")
+        return self.cursor.fetchall()
+
+    # Request retweeter's account
+    def getRetweeters(self):
+        self.query("SELECT * FROM account WHERE id IN (SELECT author_id FROM tweet, retweet WHERE tweet.id = retweet.id_retweeter)")
+        return self.cursor.fetchall()
+
+    # Request retweeted's account
+    def getRetweeteds(self):
+        self.query("SELECT * FROM account WHERE id IN (SELECT author_id FROM tweet, retweet WHERE tweet.id = retweet.id_retweeted)")
+        return self.cursor.fetchall()

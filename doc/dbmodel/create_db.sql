@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `mentions` (
   `tweet_id` BIGINT NULL,
   PRIMARY KEY (`mentioner`, `mentioned`));
 
-CREATE UNIQUE INDEX `idx_tweet_id`  ON `twitter`.`tweet` (id) COMMENT '' ALGORITHM DEFAULT LOCK DEFAULT;
-CREATE UNIQUE INDEX `idx_account_id`  ON `twitter`.`account` (id) COMMENT '' ALGORITHM DEFAULT LOCK DEFAULT;
+CREATE INDEX `idx_tweet_id`  ON `twitter`.`tweet` (id);
+CREATE INDEX `idx_account_id`  ON `twitter`.`account` (id);
 CREATE INDEX `idx_created_at`  ON `twitter`.`tweet` (created_at) USING BTREE;
 
 ALTER DATABASE twitter CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
