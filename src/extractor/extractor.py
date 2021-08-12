@@ -23,7 +23,6 @@ def insert_users(page):
 def insert_tweets(page):
     if hasattr(page, "data"):
         for tweet in page.data:
-            print(tweet.id)
             db.insertTweet(tweet)
             if hasattr(tweet, "referenced_tweets"):
                 for ref_tweet in tweet.referenced_tweets:
@@ -60,10 +59,10 @@ def download_user_timeline(npages = -1, max_results = 50):
             extract_page(page)
     db.close()
 
-def download_recent_tweets(query, max_results = 50):
+def download_recent_tweets(query, npages = 1, max_results = 50):
     global db
     db = sql.Sql("twitter", "root", "zxc12989")
-    pages = a.search_tweets(query, max_results = max_results)
+    pages = a.search_tweets(query, npages = npages, max_results = max_results)
     for page in pages:
         extract_page(page)
     db.close()

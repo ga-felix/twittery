@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `tweet` (
 CREATE TABLE IF NOT EXISTS `account` (
   `id` BIGINT NOT NULL,
   `username` VARCHAR(15) NULL,
-  `description` VARCHAR(160) NULL,
+  `description` VARCHAR(720) NULL,
   `followers_count` INT NULL,
   `following_count` INT NULL,
   `tweet_count` INT NULL,

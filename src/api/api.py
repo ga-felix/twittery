@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import requests
 import json
 from types import SimpleNamespace
@@ -61,12 +62,13 @@ or there are no more pages to be requested. """
 
 class Paginator():
 
-    def __init__(self, npages, url, key, parameters, call):
+    def __init__(self, npages, url, key, parameters, call, next_field):
         self.npages = npages
         self.url = url
         self.key = key
         self.parameters = parameters
         self.call = call
+        self.next_field = next_field
 
     def pages(self):
         page = 0
@@ -75,8 +77,8 @@ class Paginator():
             yield status
             time.sleep(0.1)
             page += 1
-            if hasattr(status.meta, "next_token") and page != self.npages:                   
-                self.parameters["pagination_token"] = status.meta.next_token
+            if hasattr(status.meta, "next_token") and page != self.npages:           
+                self.parameters[self.next_field] = status.meta.next_token
             else:
                 break
             
@@ -149,7 +151,7 @@ class Api():
     # Request to User Timeline endpoint. Check Twitter API documentation
     # for further details.
 
-    def user_timeline(self, id, npages=-1, max_results=10, start_time=None, end_time=None):
+    def user_timeline(self, id, npages=-1, max_results=100, start_time=None, end_time=None, next_field="pagination_token"):
         parameters = dict()
         parameters['tweet.fields'] = self.tweets
         parameters['user.fields'] = self.users
@@ -161,11 +163,11 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/users/{}/tweets'.format(id)
         key = self.keys_user_timeline.request()
-        return self.limit_handler(Paginator(npages, url, key, parameters, self.call), self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
 
     # Request to search tweets endpoint on Twitter API
     
-    def search_tweets(self, query, start_time=None, end_time=None, max_results=10):
+    def search_tweets(self, query, npages=1, start_time=None, end_time=None, max_results=100, next_field="next_token"):
         parameters = dict()
         parameters['query'] = query
         parameters['tweet.fields'] = self.tweets
@@ -178,11 +180,11 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/tweets/search/recent'
         key = self.keys_search_tweets.request()
-        return self.limit_handler(Paginator(1, url, key, parameters, self.call), self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
 
     # Request to full-archive search endpoint on Twitter API
     
-    def full_search(self, query, start_time=None, end_time=None, max_results=10):
+    def full_search(self, query, npages=1, start_time=None, end_time=None, max_results=10, next_field="next_token"):
         parameters = dict()
         parameters['query'] = query
         parameters['tweet.fields'] = self.tweets
@@ -195,5 +197,5 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/tweets/search/all'
         key = self.keys_full_search.request()
-        return self.limit_handler(Paginator(1, url, key, parameters, self.call), self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
 

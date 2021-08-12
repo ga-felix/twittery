@@ -40,7 +40,7 @@ class Sql(Database):
     # Close connection
     def close(self):
         self.db.commit()
-        self.db.close()
+        #self.db.close()
 
     # Stablishes a retweet relationship between two tweets
     def insertRetweet(self, retweeter, retweeted):
