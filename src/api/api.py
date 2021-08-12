@@ -73,6 +73,7 @@ class Paginator():
         while True:
             status = self.call(self.url, self.key, self.parameters)
             yield status
+            time.sleep(0.1)
             page += 1
             if hasattr(status.meta, "next_token") and page != self.npages:                   
                 self.parameters["pagination_token"] = status.meta.next_token
@@ -135,7 +136,7 @@ class Api():
             except ForbiddenError:
                 continue
             except ApiError as e:
-                with open('log-twitter-api.txt', 'a+') as log:
+                with open('logs/log-twitter-api.txt', 'a+') as log:
                     log.write(str(date.today()) + ": Twitter API reported an error: " + str(e) + " \n")
                     log.write(traceback.format_exc())
                 break
@@ -160,6 +161,35 @@ class Api():
         key = self.keys_user_timeline.request()
         return self.limit_handler(Paginator(npages, url, key, parameters, self.call), self.keys_user_timeline)
 
-    # TODO: Full-archive historical search. ALWAYS USE 'Paginator' class!
-    # TODO: Recent search. ALWAYS USE 'Paginator' class!
+    # Request to search tweets endpoint on Twitter API
+    
+    def search_tweets(self, query, start_time=None, end_time=None, max_results=10):
+        parameters = dict()
+        parameters['tweet.fields'] = self.tweets
+        parameters['user.fields'] = self.users
+        parameters['expansions'] = self.expansions
+        parameters['max_results'] = max_results
+        if start_time:
+            parameters['start_time'] = start_time
+        if end_time:
+            parameters['end_time'] = end_time
+        url = 'https://api.twitter.com/2/tweets/search/recent?query={}'.format(query)
+        key = self.keys_user_timeline.request()
+        return self.limit_handler(Paginator(max_results, url, key, parameters, self.call), self.keys_user_timeline)
+
+    # Request to full-archive search endpoint on Twitter API
+    
+    def full_search(self, query, start_time=None, end_time=None, max_results=10):
+        parameters = dict()
+        parameters['tweet.fields'] = self.tweets
+        parameters['user.fields'] = self.users
+        parameters['expansions'] = self.expansions
+        parameters['max_results'] = max_results
+        if start_time:
+            parameters['start_time'] = start_time
+        if end_time:
+            parameters['end_time'] = end_time
+        url = 'https://api.twitter.com/2/tweets/search/all?query={}'.format(query)
+        key = self.keys_user_timeline.request()
+        return self.limit_handler(Paginator(max_results, url, key, parameters, self.call), self.keys_user_timeline)
 
