@@ -1,2 +1,3 @@
-twittery/src/logs/*
-twittery/src/api/keys/keys.json
+src/logs/*
+src/api/keys/keys.json
+src/reporter/reports/*
