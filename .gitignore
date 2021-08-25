@@ -1,3 +1,4 @@
 src/logs/*
 src/api/keys/keys.json
 src/reporter/reports/*
+__pycache__/

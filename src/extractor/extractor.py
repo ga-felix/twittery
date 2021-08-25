@@ -24,6 +24,7 @@ def insert_tweets(page):
     if hasattr(page, "data"):
         for tweet in page.data:
             db.insertTweet(tweet)
+            print(tweet.id)
             if hasattr(tweet, "referenced_tweets"):
                 for ref_tweet in tweet.referenced_tweets:
                     if ref_tweet.type == "replied_to":
@@ -63,6 +64,14 @@ def download_recent_tweets(query, npages = 1, max_results = 50):
     global db
     db = sql.Sql("twitter", "root", "zxc12989")
     pages = a.search_tweets(query, npages = npages, max_results = max_results)
+    for page in pages:
+        extract_page(page)
+    db.close()
+
+def download_historical_tweets(query, start_time=None, end_time=None, npages = 1, max_results = 50):
+    global db
+    db = sql.Sql("twitter", "root", "zxc12989")
+    pages = a.full_search(query, start_time=start_time, end_time=end_time, npages = npages, max_results = max_results)
     for page in pages:
         extract_page(page)
     db.close()

@@ -111,6 +111,7 @@ class Api():
     # allows more calls than the standart one.
 
     def auth(self, bearer_token):
+        print(bearer_token)
         return {"Authorization": "Bearer {}".format(bearer_token)}
 
     # Perform the GET request to Twitter API, deserializing the JSON
@@ -184,7 +185,7 @@ class Api():
 
     # Request to full-archive search endpoint on Twitter API
     
-    def full_search(self, query, npages=1, start_time=None, end_time=None, max_results=10, next_field="next_token"):
+    def full_search(self, query, npages=1, start_time=None, end_time=None, max_results=100, next_field="next_token"):
         parameters = dict()
         parameters['query'] = query
         parameters['tweet.fields'] = self.tweets
