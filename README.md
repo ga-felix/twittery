@@ -7,7 +7,8 @@
 ## General info
 This software extracts data from Twitter and populates
 a MySQL database. Therefore, the database is used to
-create a network to be used later.
+create a network (graph) that can be used later for
+research.
 
 ## Technologies
 Project is created with:
@@ -26,8 +27,10 @@ all of them storaged on 'src' folder:
 * database: populates SQL database.
 * api: performs Twitter API calls.
 * reporter: generates the graph.
+
 'settings' and 'interface' modules are still
 being created.
+
 All database or Twitter API errors are reported
 to 'logs' folder.
 
