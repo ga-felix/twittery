@@ -28,11 +28,30 @@ all of them storaged on 'src' folder:
 * reporter: generates the graph.
 'settings' and 'interface' modules are still
 being created.
+All database or Twitter API errors are reported
+to 'logs' folder.
 
 ## Setup
-To run this project, install it using 'install'
-file, available on root directory:
+To setup this project just run 'install' file,
+available on root directory:
 
 ```
 $ cd ../twittery
 $ sudo pip3 install -r requirements.txt
+```
+
+Also, the 'twitter/src/api/keys' directory should 
+contain a 'keys.json' file, which must have a
+bearer token acquired on Twitter Developer Portal.
+If you don't have a bearer token, click [here](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens).
+'keys.json' example:
+
+```
+{
+  "twitter_acess_your_name": {
+    "bearer_token": "YOUR_BEARER_TOKEN_HERE"
+  }
+}
+```
+
+The software can handle multiple keys.
