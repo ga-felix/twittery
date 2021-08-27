@@ -16,6 +16,7 @@ def main():
     #thread2.start()
     #thread3.start()
     #thread4.start()
+    extractor.download_retweeters(1431027344530198528)
     
 if __name__ == "__main__":
     settings.init()

@@ -84,6 +84,6 @@ def download_historical_tweets(query, start_time=None, end_time=None, npages = 1
 def download_retweeters(id):
     global db
     db = sql.Sql("twitter", "root", "zxc12989")
-    page = a.retweeters_of(id)
-    insert_retweeters(page)
+    for page in a.retweeters_of(id):
+        insert_retweeters(page)
     db.close()
