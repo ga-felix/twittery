@@ -106,6 +106,7 @@ class Api():
         self.keys_user_timeline = keyring.Keyring()
         self.keys_search_tweets = keyring.Keyring()
         self.keys_full_search = keyring.Keyring()
+        self.keys_retweeters = keyring.Keyring()
 
     # Set the bearer token at the header of request. The bearer token 
     # allows more calls than the standart one.
@@ -200,3 +201,13 @@ class Api():
         key = self.keys_full_search.request()
         return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
 
+    # Request to full-archive search endpoint on Twitter API
+    
+    def retweeters_of(self, id):
+        parameters = dict()
+        parameters['tweet.fields'] = self.tweets
+        parameters['user.fields'] = self.users
+        #parameters['expansions'] = 'pinned_tweet_id'
+        url = 'https://api.twitter.com/2/tweets/{}/retweeted_by'.format(id)
+        key = self.keys_retweeters.request()
+        return self.limit_handler(Paginator(1, url, key, parameters, self.call, "next_token"), self.keys_user_timeline)
