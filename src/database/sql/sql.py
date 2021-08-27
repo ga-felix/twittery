@@ -18,7 +18,7 @@ class Sql(Database):
             self.clock = time.time()
             #print("SQL Database: Connection stablished! Welcome " + user + ".")
         except Exception as e:
-            with open('log.txt', 'a+') as log:
+            with open('logs/log.txt', 'a+') as log:
                 log.write(str(date.today()) + ": SQL Database reported an error: " + str(e) + " \n")
                 log.write(traceback.format_exc())
     

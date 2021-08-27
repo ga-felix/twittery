@@ -11,6 +11,11 @@ from tqdm import tqdm
 a = api.Api()
 db = None
 
+def insert_retweeters(page):
+    if hasattr(page, 'data'):
+        for retweeter in page.data:
+            db.insertAccount(retweeter)
+
 """ Insert users from twitter page """
 
 def insert_users(page):
@@ -74,4 +79,11 @@ def download_historical_tweets(query, start_time=None, end_time=None, npages = 1
     pages = a.full_search(query, start_time=start_time, end_time=end_time, npages = npages, max_results = max_results)
     for page in pages:
         extract_page(page)
+    db.close()
+
+def download_retweeters(id):
+    global db
+    db = sql.Sql("twitter", "root", "zxc12989")
+    for page in a.retweeters_of(id):
+        insert_retweeters(page)
     db.close()
