@@ -45,6 +45,7 @@ def insert_tweets(page):
 def insert_referenced_tweets(page):
     if hasattr(page, "includes") and hasattr(page.includes, "tweets"):
         for tweet in page.includes.tweets:
+            print('inserting', str(tweet.text))
             db.insertTweet(tweet)
             
 """ Extract data from a page """
@@ -86,4 +87,5 @@ def download_retweeters(id):
     db = sql.Sql("twitter", "root", "zxc12989")
     for page in a.retweeters_of(id):
         insert_retweeters(page)
+        insert_referenced_tweets(page)
     db.close()
