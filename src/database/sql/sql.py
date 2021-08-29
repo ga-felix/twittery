@@ -98,3 +98,8 @@ class Sql(Database):
     def getRetweeteds(self):
         self.query("SELECT * FROM account WHERE id IN (SELECT author_id FROM tweet, retweet WHERE tweet.id = retweet.id_retweeted)")
         return self.cursor.fetchall()
+
+    # Match any query
+    def find(self, query):
+        self.query(query)
+        return self.cursor.fetchall()
