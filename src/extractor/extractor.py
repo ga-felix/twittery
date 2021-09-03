@@ -45,10 +45,8 @@ def insert_tweets(page):
 def insert_referenced_tweets(page):
     if hasattr(page, "includes") and hasattr(page.includes, "tweets"):
         for tweet in page.includes.tweets:
-            print('inserting', str(tweet.text))
-            if hasattr(tweet, "referenced_tweets"):
-                print('aaa')
             db.insertTweet(tweet)
+            print(tweet.id)
             
 """ Extract data from a page """
 
