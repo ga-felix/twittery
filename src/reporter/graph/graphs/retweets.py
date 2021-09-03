@@ -9,7 +9,7 @@ class Retweets(Graph):
 
     def get_nodes(self):
         pass
-
+    
     """ Creates graph edges and nodes alongside """
 
     def add_edges(self):
