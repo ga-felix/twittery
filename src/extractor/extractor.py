@@ -74,7 +74,7 @@ def download_recent_tweets(query, npages = 1, max_results = 50):
         extract_page(page)
     db.close()
 
-def download_historical_tweets(query, start_time=None, end_time=None, npages = 1, max_results = 50):
+def download_historical_tweets(query, start_time=None, end_time=None, npages = 1, max_results = 100):
     global db
     db = sql.Sql("twitter", "root", "zxc12989")
     pages = a.full_search(query, start_time=start_time, end_time=end_time, npages = npages, max_results = max_results)
@@ -86,6 +86,7 @@ def download_retweeters(id):
     global db
     db = sql.Sql("twitter", "root", "zxc12989")
     for page in a.retweeters_of(id):
-        insert_retweeters(page)
-        insert_referenced_tweets(page)
+        print(page.data[0].tweets)
+        #insert_retweeters(page)
+        #insert_referenced_tweets(page)
     db.close()
