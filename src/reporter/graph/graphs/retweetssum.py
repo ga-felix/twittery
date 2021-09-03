@@ -20,6 +20,8 @@ class RetweetsSum(Graph):
     def add_edges(self):
         for source in self.nodes:
             for target in self.nodes:
+                if source == target:
+                    continue
                 intersection = self.db.find('SELECT author_id FROM tweet WHERE text LIKE \"%RT @{}%\" AND author_id IN (SELECT author_id FROM tweet WHERE text LIKE \"%RT @{}%\")'.format(source, target))
                 if len(intersection) == 0:
                     continue
