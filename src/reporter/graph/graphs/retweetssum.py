@@ -12,17 +12,15 @@ class RetweetsSum(Graph):
         csv = pd.read_csv("settings/targets/medias-profiles.csv", encoding='utf-8', sep=',')
         targets = list()
         for index, account in csv.iterrows():
-                targets.append(account)
+                targets.append(account[1])
         return targets
 
     """ Creates graph edges and nodes alongside """
 
     def add_edges(self):
         for source in self.nodes:
-            source_retweeters = self.db.find('SELECT author_id FROM tweet WHERE `text` LIKE \"%RT @{}%\"'.format(source))
             for target in self.nodes:
-                target_retweeters = self.db.find('SELECT author_id FROM tweet WHERE `text` LIKE \"%RT @{}%\"'.format(target))
-                intersection = [x for x in source_retweeters if x in target_retweeters]
+                intersection = self.db.find('SELECT author_id FROM tweet WHERE text LIKE \"%RT @{}%\" AND author_id IN (SELECT author_id FROM tweet WHERE text LIKE \"%RT @{}%\")'.format(source, target))
                 if len(intersection) == 0:
                     continue
                 print('Intersection between', source, 'and', target, 'of', str(len(intersection)), 'retweets')
