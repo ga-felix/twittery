@@ -17,7 +17,9 @@ def main():
     #thread3.start()
     #thread4.start()
 
-    extractor.Lookup().get_first_tweet(["Odair", "João"])
+    query = extractor.QueryBuilder().build(["Aristides"])
+    print(query)
+    print(extractor.Lookup().count_tweets(query))
     
 if __name__ == "__main__":
     settings.init()

@@ -27,7 +27,7 @@ class Sql(Database):
 
     def __exit__(self):
         self.db.commit()
-        self.cursor.close()
+        self.cursor.scroll(0, 'absolute')
 
     # Execute any query following maintenance procedures
     def query(self, query):

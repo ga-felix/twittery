@@ -107,6 +107,7 @@ class Api():
         self.keys_search_tweets = keyring.Keyring()
         self.keys_full_search = keyring.Keyring()
         self.keys_retweeters = keyring.Keyring()
+        self.keys_count = keyring.Keyring()
 
     # Set the bearer token at the header of request. The bearer token 
     # allows more calls than the standart one.
@@ -182,7 +183,7 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/tweets/search/recent'
         key = self.keys_search_tweets.request()
-        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_search_tweets)
 
     # Request to full-archive search endpoint on Twitter API
     
@@ -199,7 +200,7 @@ class Api():
             parameters['end_time'] = end_time
         url = 'https://api.twitter.com/2/tweets/search/all'
         key = self.keys_full_search.request()
-        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_user_timeline)
+        return self.limit_handler(Paginator(npages, url, key, parameters, self.call, next_field), self.keys_full_search)
 
     # Request to retweeters endpoint on Twitter API
     
@@ -210,4 +211,17 @@ class Api():
         parameters['expansions'] = 'pinned_tweet_id'
         url = 'https://api.twitter.com/2/tweets/{}/retweeted_by'.format(id)
         key = self.keys_retweeters.request()
-        return self.limit_handler(Paginator(1, url, key, parameters, self.call, "next_token"), self.keys_user_timeline)
+        return self.limit_handler(Paginator(1, url, key, parameters, self.call, "next_token"), self.keys_retweeters)
+
+    # Request to count all endpoint on Twitter API
+    
+    def count(self, query, start_time=None, end_time=None, next_field="next_token"):
+        parameters = dict()
+        parameters['query'] = query
+        if start_time:
+            parameters['start_time'] = start_time
+        if end_time:
+            parameters['end_time'] = end_time
+        url = 'https://api.twitter.com/2/tweets/counts/all'
+        key = self.keys_count.request()
+        return self.limit_handler(Paginator(-1, url, key, parameters, self.call, next_field), self.keys_count)

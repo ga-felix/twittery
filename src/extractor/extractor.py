@@ -1,34 +1,95 @@
 # -*- coding: utf-8 -*-
 from api import api
-#from database.sql import sql
+#
+from datetime import datetime
 
 class DataProcessor():
 
-    def has_authors(self):
-        return hasattr(self.page, "includes") and hasattr(self.page.includes, "users")
+    def has_meta(self, page):
+        return hasattr(page, "meta")
 
-    def has_data(self):
-        return hasattr(self.page, "data")
+    def has_authors(self, page):
+        return hasattr(page, "includes") and hasattr(page.includes, "users")
 
-    def process_page_data(self):
-        get_authors = self.has_authors()
-        if self.has_data():
-            for index, tweet in enumerate(self.page.data):
+    def has_data(self, page):
+        return hasattr(page, "data")
+
+    def process_page_data(self, page):
+        get_authors = self.has_authors(page)
+        if self.has_data(page):
+            for index, tweet in enumerate(page.data):
                 if get_authors:
-                    tweet.author = self.page.includes.users[index]
+                    tweet.author = page.includes.users[index]
                 self.tweets.append(tweet)
+        
+        if self.has_meta(page):
+            self.tweets[0].meta = page.meta
                 
-    def process_page(self, page):
-        self.page = page
+    def process_page(self, pages):
         self.tweets = list()
-        self.process_page_data()
+        for page in pages:
+            self.process_page_data(page)
         return self.tweets
+
+class QueryBuilder():
+
+    def __init__(self):
+        self.query = str()
+
+    def write_from(self, user):
+        if user != None:
+            self.query += " from:{}".format(user)
+
+    def write_retweets_of(self, user):
+        self.query += " retweets_of:{}".format(user)
+
+    def write_del_type(self, del_retweets, del_replies, del_quotes, del_verified):
+        if del_retweets:
+            self.query += " -is:retweet"
+        if del_replies:
+            self.query += " -is:reply"
+        if del_quotes:
+            self.query += " -is:quote"
+        if del_verified:
+            self.query += " -is:verified"
+
+    def write_type_only(self, retweets_only, replies_only, quotes_only, verified):
+        if retweets_only:
+            self.query += " is:retweet"
+        if replies_only:
+            self.query += " is:reply"
+        if quotes_only:
+            self.query += " is:quote"
+        if verified:
+            self.query += " is:verified"
+
+    def write_lang(self, lang):
+        self.query += " lang:" + lang
+
+    def write_keywords(self, keywords):
+        temp_query = str()
+        for keyword in keywords:
+            temp_query += "(\"" + keyword + "\")" + " OR "
+        self.query = temp_query[:len(temp_query) - 4]
+
+    def build(self, keywords, lang="pt", retweets_only=False, replies_only=False, quotes_only=False, verified=False, del_retweets=False, del_replies=False, del_quotes=False, del_verified=False, retweets_of=None, from_user=None):
+        self.write_keywords(keywords)
+        self.write_lang(lang)
+        if retweets_of != None:
+            self.write_retweets_of(retweets_of)
+            del_retweets, del_quotes = False, False
+        self.write_from(from_user)
+        self.write_type_only(retweets_only, replies_only, quotes_only, verified)
+        self.write_del_type(del_retweets, del_replies, del_quotes, del_verified)
+        return self.query
+        
 
 class Download():
 
     def __init__(self, dbms, database, user, password):
         self.connection = None
         if dbms.lower() == "mysql":
+            from database.sql import sql
             self.connection = sql.Sql(database, user, password)
         if self.connection != None:
             self.t_api = api.Api()
@@ -57,10 +118,18 @@ class Lookup():
         self.t_api = api.Api()
         self.data = DataProcessor()
     
-    def get_first_tweet(self, keywords, lang="pt", start_time="2006-03-21T12:51:00Z", end_time=None):
-        query = str()
-        for keyword in keywords:
-            query += "(\"" + keyword + "\")" + " OR "
-        query = query[:len(query) - 3]
-        print(query)
-        #tweets = self.data.process_page(self.t_api.full_search(query, start_time=start_time, end_time=end_time, npages=npages, max_results=max_results))
+    def get_first_tweet(self, query, end_time=None, npages=-1, max_results=500):
+        if end_time == None:
+            end_time = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+        tweets = self.data.process_page(self.t_api.full_search(query, start_time="2006-03-21T12:51:00Z", end_time=end_time, npages=npages, max_results=max_results))
+        return tweets.sort(key=lambda x: x.id, reverse=True)
+
+    def get_archive_tweets(self, query, start_time=None, end_time=None, npages=-1, max_results=500):
+        return self.data.process_page(self.t_api.full_search(query, start_time=start_time, end_time=end_time, npages=npages, max_results=max_results))
+
+    def get_recent_tweets(self, query, start_time=None, end_time=None, npages=-1, max_results=500):
+        return self.data.process_page(self.t_api.search_tweets(query, start_time=start_time, end_time=end_time, npages=npages, max_results=max_results))
+
+    def count_tweets(self, query, start_time=None, end_time=None):
+        tweets = self.data.process_page(self.t_api.count(query, start_time=start_time, end_time=end_time))
+        return tweets[0].meta.total_tweet_count
