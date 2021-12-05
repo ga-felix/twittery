@@ -1,92 +1,66 @@
 # -*- coding: utf-8 -*-
-
 from api import api
-from settings import settings
-from database.sql import sql
-import time
-from tqdm import tqdm
+#from database.sql import sql
 
-""" Singleton references to api and database """
+class DataProcessor():
 
-a = api.Api()
-db = None
+    def has_authors(self):
+        return hasattr(self.page, "includes") and hasattr(self.page.includes, "users")
 
-def insert_retweeters(page):
-    if hasattr(page, 'data'):
-        for retweeter in page.data:
-            db.insertAccount(retweeter)
+    def has_data(self):
+        return hasattr(self.page, "data")
 
-""" Insert users from twitter page """
+    def process_page_data(self):
+        get_authors = self.has_authors()
+        if self.has_data():
+            for index, tweet in enumerate(self.page.data):
+                if get_authors:
+                    tweet.author = self.page.includes.users[index]
+                self.tweets.append(tweet)
+                
+    def process_page(self, page):
+        self.page = page
+        self.tweets = list()
+        self.process_page_data()
+        return self.tweets
 
-def insert_users(page):
-    if hasattr(page, "includes") and hasattr(page.includes, "users"):
-        for user in page.includes.users:
-            db.insertAccount(user)
+class Download():
 
-""" Insert tweets from twitter page """
+    def __init__(self, dbms, database, user, password):
+        self.connection = None
+        if dbms.lower() == "mysql":
+            self.connection = sql.Sql(database, user, password)
+        if self.connection != None:
+            self.t_api = api.Api()
+            self.data = DataProcessor()
 
-def insert_tweets(page):
-    if hasattr(page, "data"):
-        for tweet in page.data:
-            db.insertTweet(tweet)
-            print(tweet.id)
-            if hasattr(tweet, "referenced_tweets"):
-                for ref_tweet in tweet.referenced_tweets:
-                    if ref_tweet.type == "replied_to":
-                        db.insertReply(tweet.id, ref_tweet.id)
-                    if ref_tweet.type == "quoted":
-                        db.insertQuote(tweet.id, ref_tweet.id)
-                    if ref_tweet.type == "retweeted":
-                        db.insertRetweet(tweet.id, ref_tweet.id)
+    def download_tweets(self, tweets):
+        with self.connection:
+            for tweet in tweets:
+                self.connection.insertTweet(tweet)
+                if hasattr(self.tweet, "author"):
+                    self.connection.insertAccount(tweet.author)
 
+    def download_user_timeline(self, users, npages=-1, max_results=50):
+        for user in users:
+            self.download_tweets(self.data.process_page(self.t_api.user_timeline(user, npages=npages, max_results=max_results)))
 
-""" Insert referenced tweets (see expansions) from twitter page """
+    def download_recent_tweets(self, query, npages=1, max_results=50):
+        self.download_tweets(self.data.process_page(self.t_api.search_tweets(query, npages = npages, max_results = max_results)))
 
-def insert_referenced_tweets(page):
-    if hasattr(page, "includes") and hasattr(page.includes, "tweets"):
-        for tweet in page.includes.tweets:
-            db.insertTweet(tweet)
-            print(tweet.id)
-            
-""" Extract data from a page """
+    def download_historical_tweets(self, query, start_time=None, end_time=None, npages=1, max_results=100):
+        self.download_tweets(self.data.process_page(self.t_api.full_search(query, start_time=start_time, end_time=end_time, npages=npages, max_results=max_results)))
 
-def extract_page(page):
-    insert_referenced_tweets(page)
-    insert_tweets(page)
-    insert_users(page)
+class Lookup():
 
-""" Download user's timeline tweets """
-
-def download_user_timeline(npages = -1, max_results = 50):
-    global db
-    db = sql.Sql("twitter", "root", "zxc12989")
-    for user in settings.user_timeline:
-        pages = a.user_timeline(user, npages = npages, max_results = max_results)
-        for page in pages:
-            extract_page(page)
-    db.close()
-
-def download_recent_tweets(query, npages = 1, max_results = 50):
-    global db
-    db = sql.Sql("twitter", "root", "zxc12989")
-    pages = a.search_tweets(query, npages = npages, max_results = max_results)
-    for page in pages:
-        extract_page(page)
-    db.close()
-
-def download_historical_tweets(query, start_time=None, end_time=None, npages = 1, max_results = 100):
-    global db
-    db = sql.Sql("twitter", "root", "zxc12989")
-    pages = a.full_search(query, start_time=start_time, end_time=end_time, npages = npages, max_results = max_results)
-    for page in pages:
-        extract_page(page)
-    db.close()
-
-def download_retweeters(id):
-    global db
-    db = sql.Sql("twitter", "root", "zxc12989")
-    for page in a.retweeters_of(id):
-        print(page.data[0].tweets)
-        #insert_retweeters(page)
-        #insert_referenced_tweets(page)
-    db.close()
+    def __init__(self):
+        self.t_api = api.Api()
+        self.data = DataProcessor()
+    
+    def get_first_tweet(self, keywords, lang="pt", start_time="2006-03-21T12:51:00Z", end_time=None):
+        query = str()
+        for keyword in keywords:
+            query += "(\"" + keyword + "\")" + " OR "
+        query = query[:len(query) - 3]
+        print(query)
+        #tweets = self.data.process_page(self.t_api.full_search(query, start_time=start_time, end_time=end_time, npages=npages, max_results=max_results))

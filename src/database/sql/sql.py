@@ -16,12 +16,19 @@ class Sql(Database):
             self.db = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db, charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
             self.cursor = self.db.cursor()
             self.clock = time.time()
-            #print("SQL Database: Connection stablished! Welcome " + user + ".")
+            print("SQL Database: Connection stablished! Welcome " + user + ".")
         except Exception as e:
             with open('logs/log.txt', 'a+') as log:
                 log.write(str(date.today()) + ": SQL Database reported an error: " + str(e) + " \n")
                 log.write(traceback.format_exc())
-    
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self):
+        self.db.commit()
+        self.cursor.close()
+
     # Execute any query following maintenance procedures
     def query(self, query):
         try:
@@ -36,11 +43,6 @@ class Sql(Database):
             if now - self.clock > 3:
                 self.db.commit()
                 self.clock = now
-
-    # Close connection
-    def close(self):
-        self.db.commit()
-        #self.db.close()
 
     # Stablishes a retweet relationship between two tweets
     def insertRetweet(self, retweeter, retweeted):
