@@ -35,7 +35,7 @@ class Sql(Database):
             self.cursor.execute(query)
         except Exception as e:
             self.db.rollback()
-            with open('logs/log-sql-db.txt', 'a+') as log:
+            with open('logs/log-db-sql.txt', 'a+') as log:
                 log.write(str(date.today()) + ": SQL Database reported an error: " + str(e) + " \n" + " query: " + query)
                 log.write(traceback.format_exc())
         else:

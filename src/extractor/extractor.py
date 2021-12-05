@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from api import api
-#
 from datetime import datetime
 
 class DataProcessor():
+
+    def has_reference(self, tweet):
+        return hasattr(tweet, "referenced_tweets")
 
     def has_meta(self, page):
         return hasattr(page, "meta")
@@ -20,6 +22,16 @@ class DataProcessor():
             for index, tweet in enumerate(page.data):
                 if get_authors:
                     tweet.author = page.includes.users[index]
+    
+                tweet.reply_of, tweet.quote_of, tweet.retweet_of = None
+                if hasattr(tweet, "referenced_tweets"):
+                    for ref_tweet in tweet.referenced_tweets:
+                        if ref_tweet.type == "replied_to":
+                            tweet.reply_of = ref_tweet.id
+                        if ref_tweet.type == "quoted":
+                            tweet.quote_of = ref_tweet.id
+                        if ref_tweet.type == "retweeted":
+                            tweet.retweet_of = ref_tweet.id
                 self.tweets.append(tweet)
         
         if self.has_meta(page):
