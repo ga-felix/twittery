@@ -20,6 +20,6 @@ def create_graph(gname, since='2000-01-01', until='2060-01-01'):
 def export_tweets(tweets, name):
     with open(name + '.csv', 'w+', encoding='utf-8', newline='') as file:
         writer = csv.writer(file, delimiter=';', quoting=csv.QUOTE_ALL)
+        writer.writerow(["id", "text", "created_at", "author_id", "author_name", "like_count", "retweet_count", "quote_count", "reply_count", "retweet_of_id", "quote_of_id", "reply_to_id"])
         for tweet in tweets:
-            tweet.text.replace("\"", "'")
-            writer.writerow(vars(tweet).values())
+            writer.writerow([tweet.id, tweet.text.replace("\"", "'"), tweet.created_at, tweet.author_id, tweet.author.name, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.quote_count, tweet.public_metrics.reply_count, tweet.retweet_of, tweet.quote_of, tweet.reply_of])
