@@ -2,7 +2,6 @@
 from api import api
 from database.sql import sql
 from datetime import datetime
-from pymysql import DataError
 
 class DataProcessor():
 
@@ -107,10 +106,7 @@ class Download():
     def download_tweets(self, tweets):
         with self.connection as db:
             for tweet in tweets:
-                try:
-                    db.insertTweet(tweet)
-                except DataError:
-                    continue
+                db.insertTweet(tweet)
                 if hasattr(tweet, "author"):
                     db.insertAccount(tweet.author)
 

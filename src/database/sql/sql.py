@@ -7,6 +7,7 @@ import pymysql.cursors
 from datetime import date
 import sys
 import time
+from pymysql import DataError
 
 class Sql(Database):
 
@@ -35,6 +36,8 @@ class Sql(Database):
     def query(self, query):
         try:
             self.cursor.execute(query)
+        except DataError:
+            raise DataError
         except Exception as e:
             self.db.rollback()
             with open('logs/log-db-sql.txt', 'a+') as log:
@@ -61,9 +64,12 @@ class Sql(Database):
     # Insert a tweet
     def insertTweet(self, tweet):
         date, text = tweet.created_at.split("T")[0], tweet.text.replace("\"", "'")
-        self.query("INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count, retweet_of, reply_of, quote_of) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\") ON DUPLICATE KEY UPDATE id=\"{}\", text=\"{}\", created_at=\"{}\", author_id=\"{}\", like_count=\"{}\", retweet_count=\"{}\", reply_count=\"{}\", quote_count=\"{}\", retweet_of=\"{}\", reply_of=\"{}\", quote_of=\"{}\";".format
+        try:
+            self.query("INSERT INTO tweet (id, text, created_at, author_id, like_count, retweet_count, reply_count, quote_count, retweet_of, reply_of, quote_of) VALUES (\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\") ON DUPLICATE KEY UPDATE id=\"{}\", text=\"{}\", created_at=\"{}\", author_id=\"{}\", like_count=\"{}\", retweet_count=\"{}\", reply_count=\"{}\", quote_count=\"{}\", retweet_of=\"{}\", reply_of=\"{}\", quote_of=\"{}\";".format
         (tweet.id, text, date, tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count, tweet.retweet_of, tweet.reply_of, tweet.quote_of,
         tweet.id, text, date, tweet.author_id, tweet.public_metrics.like_count, tweet.public_metrics.retweet_count, tweet.public_metrics.reply_count, tweet.public_metrics.quote_count, tweet.retweet_of, tweet.reply_of, tweet.quote_of))
+        except DataError:
+            return
 
     # Insert a twitter account
     def insertAccount(self, account):
