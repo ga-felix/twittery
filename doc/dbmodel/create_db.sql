@@ -1,3 +1,5 @@
+SET GLOBAL default_storage_engine = 'InnoDB';
+
 CREATE SCHEMA IF NOT EXISTS `twitterDB` DEFAULT CHARACTER SET utf8mb4;
 USE `twitterDB` ;
 
@@ -41,5 +43,5 @@ CREATE INDEX `idx_created_at`  ON `twitterDB`.`tweet` (created_at) USING BTREE;
 
 ALTER DATABASE twitterDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 ALTER TABLE tweet CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-ALTER TABLE tweet CHANGE text text VARCHAR(560) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-ALTER TABLE account CHANGE description description VARCHAR(720) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE tweet CHANGE text text VARCHAR(767) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE account CHANGE description description VARCHAR(767) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

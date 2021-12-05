@@ -19,7 +19,7 @@ def main():
 
     query = extractor.QueryBuilder().build(["Aristides"])
     print(query)
-    print(extractor.Lookup().count_tweets(query))
+    print(extractor.Download("mysql", "twitterDB", "root", "zxc12989").download_historical_tweets(query, npages=10, max_results=500))
     
 if __name__ == "__main__":
     settings.init()

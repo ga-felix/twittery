@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from api import api
+from database.sql import sql
 from datetime import datetime
+from pymysql import DataError
 
 class DataProcessor():
 
@@ -10,20 +12,16 @@ class DataProcessor():
     def has_meta(self, page):
         return hasattr(page, "meta")
 
-    def has_authors(self, page):
-        return hasattr(page, "includes") and hasattr(page.includes, "users")
-
     def has_data(self, page):
         return hasattr(page, "data")
 
     def process_page_data(self, page):
-        get_authors = self.has_authors(page)
+        authors = list(page.includes.users)
         if self.has_data(page):
             for index, tweet in enumerate(page.data):
-                if get_authors:
-                    tweet.author = page.includes.users[index]
+                tweet.author = next((author for author in authors if author.id == tweet.author_id), None)
     
-                tweet.reply_of, tweet.quote_of, tweet.retweet_of = None
+                tweet.reply_of, tweet.quote_of, tweet.retweet_of = 0, 0, 0
                 if hasattr(tweet, "referenced_tweets"):
                     for ref_tweet in tweet.referenced_tweets:
                         if ref_tweet.type == "replied_to":
@@ -101,18 +99,20 @@ class Download():
     def __init__(self, dbms, database, user, password):
         self.connection = None
         if dbms.lower() == "mysql":
-            from database.sql import sql
             self.connection = sql.Sql(database, user, password)
         if self.connection != None:
             self.t_api = api.Api()
             self.data = DataProcessor()
 
     def download_tweets(self, tweets):
-        with self.connection:
+        with self.connection as db:
             for tweet in tweets:
-                self.connection.insertTweet(tweet)
-                if hasattr(self.tweet, "author"):
-                    self.connection.insertAccount(tweet.author)
+                try:
+                    db.insertTweet(tweet)
+                except DataError:
+                    continue
+                if hasattr(tweet, "author"):
+                    db.insertAccount(tweet.author)
 
     def download_user_timeline(self, users, npages=-1, max_results=50):
         for user in users:
