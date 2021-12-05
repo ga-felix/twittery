@@ -1,8 +1,7 @@
 from extractor import extractor
 from settings import settings
-#from reporter import reporter
-import threading
-import pandas as pd
+from reporter import reporter
+#import threading
 
 def main():
     #thread1 = threading.Thread(target = extractor.download_recent_tweets, args = ("#Bolsonaro2022",),
@@ -18,8 +17,7 @@ def main():
     #thread4.start()
 
     query = extractor.QueryBuilder().build(["Aristides"])
-    print(query)
-    print(extractor.Download("mysql", "twitterDB", "root", "zxc12989").download_historical_tweets(query, npages=10, max_results=500))
+    reporter.export_tweets(extractor.Lookup().get_recent_tweets(query, npages=1, max_results=100), "aristides")
     
 if __name__ == "__main__":
     settings.init()

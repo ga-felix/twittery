@@ -7,7 +7,7 @@ class Graph(ABC):
     """ Global variables and export path """
     
     path = "reporter/reports/"
-    db = sql.Sql("twitter", "root", "zxc12989")
+    db = sql.Sql("twitterDB", "root", "zxc12989")
 
     """ Implements default graph algorithm """
 
