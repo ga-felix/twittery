@@ -102,7 +102,7 @@ class Api():
     def __init__(self):
         self.tweets = "id,text,created_at,author_id,public_metrics,referenced_tweets"
         self.users = "id,username,description,public_metrics,verified,created_at"
-        self.expansions = "author_id,entities.mentions.username"
+        self.expansions = "author_id"
         self.keys_user_timeline = keyring.Keyring()
         self.keys_search_tweets = keyring.Keyring()
         self.keys_full_search = keyring.Keyring()
