@@ -1,6 +1,7 @@
 from extractor import extractor
 from settings import settings
-from reporter import reporter
+#from reporter import reporter
+from interface import interface
 #import threading
 
 def main():
@@ -16,9 +17,10 @@ def main():
     #thread3.start()
     #thread4.start()
 
-    query = extractor.QueryBuilder().build(["Aristides"])
-    reporter.export_tweets(extractor.Lookup().get_recent_tweets(query, npages=1, max_results=100), "aristides")
-    
+    #query = extractor.QueryBuilder().build(["Aristides"])
+    #reporter.export_tweets(extractor.Lookup().get_recent_tweets(query, npages=1, max_results=100), "aristides")
+    interface.main()
+
 if __name__ == "__main__":
     settings.init()
     main()

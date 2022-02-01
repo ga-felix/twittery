@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from api import api
-from database.sql import sql
 from datetime import datetime
 
 class DataProcessor():
@@ -95,6 +94,8 @@ class QueryBuilder():
 
 class Download():
 
+    from database.sql import sql
+    
     def __init__(self, dbms, database, user, password):
         self.connection = None
         if dbms.lower() == "mysql":
